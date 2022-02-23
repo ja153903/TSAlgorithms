@@ -13,7 +13,7 @@ Deno.test("convertListToTreeNode", () => {
 
 Deno.test("levelorder", () => {
   const items = [1, 2, 3, 4, 5];
-  const result = [[3], [2, 5], [1, 4]];
+  const result = [3, 2, 5, 1, 4];
 
   const root = convertListToTreeNode(items);
 

@@ -71,7 +71,7 @@ export function postorder(root: TreeNode | null): number[] {
   return result;
 }
 
-export function levelorder(root: TreeNode | null): number[][] {
+export function levelorder(root: TreeNode | null): number[] {
   if (!root) {
     return [];
   }
@@ -106,5 +106,5 @@ export function levelorder(root: TreeNode | null): number[][] {
     result.push(subresult);
   }
 
-  return result;
+  return result.flat();
 }
