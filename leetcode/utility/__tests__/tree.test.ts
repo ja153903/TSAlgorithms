@@ -1,9 +1,6 @@
 import { assertEquals } from "../../../assert.ts";
 
-import {
-  convertListToTreeNode,
-  inorder
-} from "../tree.ts";
+import { convertListToTreeNode, inorder } from "../tree.ts";
 
 Deno.test("convertListToTreeNode", () => {
   const items = [1, 2, 3, 4, 5];

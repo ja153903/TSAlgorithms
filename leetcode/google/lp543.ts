@@ -13,11 +13,11 @@ export default function diameterOfBinaryTree(root: TreeNode | null): number {
     const right = height(root.right);
 
     max = Math.max(max, left + right);
-    
-    return 1 + Math.max(left, right)
+
+    return 1 + Math.max(left, right);
   }
 
-  height(root)
+  height(root);
 
   return max;
 }

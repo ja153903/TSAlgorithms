@@ -1,7 +1,11 @@
 import TreeNode from "../dataStructures/treenode.ts";
 
 export function convertListToTreeNode(items: number[]): TreeNode | null {
-  function helper(items: number[], left: number, right: number): TreeNode | null {
+  function helper(
+    items: number[],
+    left: number,
+    right: number
+  ): TreeNode | null {
     if (left >= right) {
       return null;
     }
@@ -45,7 +49,7 @@ export function preorder(root: TreeNode | null): number[] {
   }
 
   const result: number[] = [];
-  
+
   traverse(root, result);
 
   return result;
