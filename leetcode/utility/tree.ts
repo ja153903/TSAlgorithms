@@ -54,3 +54,57 @@ export function preorder(root: TreeNode | null): number[] {
 
   return result;
 }
+
+export function postorder(root: TreeNode | null): number[] {
+  function traverse(root: TreeNode | null, result: number[]) {
+    if (root) {
+      traverse(root.left, result);
+      traverse(root.right, result);
+      result.push(root.val);
+    }
+  }
+
+  const result: number[] = [];
+
+  traverse(root, result);
+
+  return result;
+}
+
+export function levelorder(root: TreeNode | null): number[][] {
+  if (!root) {
+    return [];
+  }
+
+  const result: number[][] = []
+  const queue: Array<TreeNode | null> = [];
+
+  queue.push(root);
+
+  while (queue.length) {
+    const size = queue.length;
+
+    const subresult: number[] = [];
+
+    for (let i = 0; i < size; i++) {
+      const front = queue.shift() ?? null;
+      if (!front) {
+        break;
+      }
+
+      subresult.push(front.val);
+
+      if (front.left) {
+        queue.push(front.left);
+      }
+
+      if (front.right) {
+        queue.push(front.right);
+      }
+    }
+
+    result.push(subresult);
+  }
+
+  return result;
+}
